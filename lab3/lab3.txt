@@ -1,0 +1,19 @@
+sudo useradd itiuser1
+
+sudo useradd itiuser2
+
+sudo groupadd os_team
+
+mkdir os_team_workspace
+
+sudo chgrp os_team os_team_workspace
+
+sudo chmod g+s os_team_workspace
+
+sudo usermod -a itiuser1 -G os_team 
+
+sudo usermod -a itiuser2 -G os_team 
+
+tail -f /var/log/syslog
+
+ps -aux | grep tail
